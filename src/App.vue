@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <GlobalHeader></GlobalHeader>
+    <router-view></router-view>
     <GlobalFooter></GlobalFooter>
   </div>
 </template>
