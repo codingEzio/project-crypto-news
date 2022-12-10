@@ -1,5 +1,7 @@
 <template>
-  <footer>Footer here</footer>
+  <b-container class="text-center">
+    <p class="text-muted">Footer here</p>
+  </b-container>
 </template>
 
 <script>

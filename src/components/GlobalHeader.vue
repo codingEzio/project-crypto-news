@@ -1,5 +1,5 @@
 <template>
-  <nav>Header here</nav>
+  <b-navbar toggleable="sm" type="dark" variant="transparent"> </b-navbar>
 </template>
 
 <script>

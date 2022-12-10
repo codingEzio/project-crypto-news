@@ -1,3 +1,11 @@
 <template>
-  <p><em>Home Here</em></p>
+  <b-container>
+    <p>Home here</p>
+  </b-container>
 </template>
+
+<script>
+export default {
+  name: 'GlobalHome',
+};
+</script>

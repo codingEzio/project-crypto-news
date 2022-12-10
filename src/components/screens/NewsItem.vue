@@ -1,3 +1,11 @@
 <template>
-  <p><em>News Here</em></p>
+  <b-container>
+    <p>News here</p>
+  </b-container>
 </template>
+
+<script>
+export default {
+  name: 'NewsItem',
+};
+</script>
