@@ -16,13 +16,20 @@
           </b-link>
         </p>
       </template>
+
+      <PriceConverter class="mt-5" />
     </b-jumbotron>
   </b-container>
 </template>
 
 <script>
+import PriceConverter from '@/components/converters/PriceConverter';
+
 export default {
   name: 'GlobalHome',
+  components: {
+    PriceConverter,
+  },
 };
 </script>
 
