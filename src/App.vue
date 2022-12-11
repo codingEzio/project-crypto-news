@@ -31,7 +31,7 @@ export default {
   width: 100vw;
   height: 100vh;
 
-  background-color: aliceblue;
+  background-color: black;
 
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,8 +49,7 @@ export default {
   background-color: transparent;
   color: #ffffff;
 
-  padding: 0;
-  padding-bottom: 0.375rem;
+  padding: 0 0 0.375rem;
 
   font-size: inherit;
   line-height: 1.5;
