@@ -17,7 +17,7 @@
         </p>
       </template>
 
-      <PriceConverter class="mt-5" />
+      <PriceConverter class="mt-5 converter" />
     </b-jumbotron>
 
     <PriceTrend class="mb-5 px-4" />
@@ -60,5 +60,25 @@ export default {
 
 .jumbotron-lead {
   max-width: 600px;
+}
+
+@media screen and (max-width: 400px) {
+  .jumbotron::before {
+    left: 0;
+
+    width: 100%;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .jumbotron .display-3,
+  .jumbotron .lead {
+    text-align: center;
+  }
+
+  .converter {
+    margin: 0 auto;
+  }
 }
 </style>

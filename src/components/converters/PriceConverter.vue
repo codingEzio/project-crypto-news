@@ -1,6 +1,6 @@
 <template>
   <b-row>
-    <b-col>
+    <b-col class="mb-3" xs="12" sm="6">
       <b-card bg-variant="card" border-variant="transparent">
         <div class="mt-1">
           <b-dropdown text="Select Coin" variant="transparent">
@@ -21,7 +21,7 @@
       </b-card>
     </b-col>
 
-    <b-col>
+    <b-col class="mb-3" xs="12" sm="6">
       <b-card bg-variant="card" border-variant="transparent">
         <div class="mt-1">
           <b-dropdown text="Select Coin" variant="transparent">

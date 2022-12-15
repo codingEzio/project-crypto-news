@@ -15,3 +15,10 @@ export default {
   name: 'GlobalFooter',
 };
 </script>
+
+<style scoped>
+.footer {
+  background-image: linear-gradient(transparent 5%, #323639 100%);
+  font-size: 0.85em;
+}
+</style>

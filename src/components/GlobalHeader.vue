@@ -9,7 +9,7 @@
           <b-nav-item to="/home">Home</b-nav-item>
           <b-nav-item to="/news">News</b-nav-item>
           <b-nav-item
-            class="ml-3 py-0 btn btn-outline-secondary"
+            class="mx-3 py-0 btn btn-outline-secondary"
             href="https://github.com/codingezio"
             >Source
           </b-nav-item>
@@ -25,4 +25,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.navbar {
+  box-shadow: 0 15px 15px -2px #323639;
+  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+</style>

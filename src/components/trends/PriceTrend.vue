@@ -91,6 +91,11 @@ export default {
 </script>
 
 <style scoped>
+.trend {
+  background-color: #323639;
+  box-shadow: 0 0 15px 10px #323639;
+}
+
 .trend .border,
 .trend-thead-tr th {
   border-color: transparent !important;

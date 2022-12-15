@@ -68,4 +68,10 @@ export default {
 .bg-card {
   background-color: #41464a;
 }
+
+@media screen and (max-width: 600px) {
+  .app-content {
+    background-image: none;
+  }
+}
 </style>
