@@ -8,6 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import App from './App.vue';
 import GlobalHome from './components/screens/GlobalHome';
 import NewsItem from './components/screens/NewsItem';
+import store from './store';
 
 Vue.use(VueRouter);
 Vue.use(VueBootStrap);
@@ -22,6 +23,7 @@ const router = new VueRouter({
 });
 
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app');
