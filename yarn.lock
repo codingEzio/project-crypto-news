@@ -2614,6 +2614,11 @@ csstype@^3.1.0:
   resolved "https://registry.npmmirror.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
+date-fns@2.0.0-alpha.37:
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-alpha.37.tgz#c58b3e827da4f860ec8dc123e54019efb4a610e0"
+  integrity sha512-fyIv/h6fkFd1u2NHXni5LPRPoa9FFh3hY67JSjNfa+k/u4EKvfrpGtoTM16Y/BJOqTb4W05UjcmwBna1ElyxDA==
+
 de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
