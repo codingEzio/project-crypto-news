@@ -19,16 +19,20 @@
 
       <PriceConverter class="mt-5" />
     </b-jumbotron>
+
+    <PriceTrend class="mb-5 px-4" />
   </b-container>
 </template>
 
 <script>
 import PriceConverter from '@/components/converters/PriceConverter';
+import PriceTrend from '@/components/trends/PriceTrend';
 
 export default {
   name: 'GlobalHome',
   components: {
     PriceConverter,
+    PriceTrend,
   },
 };
 </script>
