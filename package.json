@@ -19,7 +19,8 @@
     "chart.js": "2.7.2",
     "vue-chartjs": "3.4.0",
     "aos": "2.3.3",
-    "change-case": "3.0.2"
+    "change-case": "3.0.2",
+    "vuex-persistedstate": "2.5.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
