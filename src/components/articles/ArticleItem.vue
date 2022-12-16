@@ -1,5 +1,12 @@
 <template>
-  <b-card no-body bg-variant="card" border-variant="transparent">
+  <b-card
+    class="article"
+    no-body
+    bg-variant="card"
+    border-variant="transparent"
+    data-aos="slide-up"
+    data-aos-once="true"
+  >
     <a
       :href="url"
       target="_blank"
