@@ -27,10 +27,16 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #323639;
+}
+
 .app {
   position: relative;
+
   min-height: 100vh;
-  max-width: 100vw;
+  height: 100%;
+  width: 100vw;
 
   background-image: url('../public/images/bg.svg');
   background-repeat: no-repeat;
