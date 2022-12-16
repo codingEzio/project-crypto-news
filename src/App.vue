@@ -16,9 +16,14 @@ import GlobalFooter from './components/GlobalFooter';
 
 export default {
   name: 'App',
+
   components: {
     GlobalHeader,
     GlobalFooter,
+  },
+
+  created() {
+    this.$store.dispatch('coins/getAllCoins');
   },
 };
 </script>
