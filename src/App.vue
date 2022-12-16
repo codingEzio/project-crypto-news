@@ -2,9 +2,7 @@
   <div class="app">
     <GlobalHeader></GlobalHeader>
 
-    <div class="app-content">
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
 
     <GlobalFooter></GlobalFooter>
   </div>
@@ -30,30 +28,21 @@ export default {
 
 <style>
 .app {
-  display: flex;
-  flex-direction: column;
-
-  width: 100vw;
-  height: 100vh;
-
-  background-color: black;
-
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.app-content {
-  flex: 1;
-
-  overflow-x: hidden;
-  overflow-y: auto;
+  position: relative;
+  min-height: 100vh;
+  max-width: 100vw;
 
   background-image: url('../public/images/bg.svg');
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 700px;
   background-attachment: local;
+  background-color: #323639;
+
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
 }
 
 .border-transparent {
@@ -74,8 +63,12 @@ export default {
   background-color: #41464a;
 }
 
+.bg-dark {
+  background-color: #323639 !important;
+}
+
 @media screen and (max-width: 600px) {
-  .app-content {
+  .app {
     background-image: none;
   }
 }
