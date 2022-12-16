@@ -18,9 +18,13 @@ const actions = {
 };
 
 const mutations = {
-  setNews(state, data) {
-    state.news = R.prop('data', data);
-    state.fetchedAt = R.prop('fetchedAt', data);
+  setNews(state, response) {
+    state.news = R.pipe(
+      R.concat(R.prop('data', response)),
+      R.uniqBy(R.prop('id')), // ensure the news were unique
+    )(state.news);
+
+    state.fetchedAt = R.prop('fetchedAt', response);
   },
 
   setError(state, error) {
