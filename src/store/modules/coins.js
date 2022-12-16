@@ -30,6 +30,17 @@ const actions = {
         commit('setError', error);
       });
   },
+
+  getCoinsPrices({ commit }, { coins, currencies }) {
+    coinsAPI
+      .getCoinsPrices(coins, currencies)
+      .then(response => {
+        commit('savePrices', response.data);
+      })
+      .catch(error => {
+        commit('setError', error);
+      });
+  },
 };
 
 const mutations = {
@@ -54,6 +65,10 @@ const mutations = {
       ),
       R.values,
     )(Data);
+  },
+
+  savePrices(state, response) {
+    state.prices = R.merge(state.prices, response);
   },
 
   setError(state, error) {

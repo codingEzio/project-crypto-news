@@ -11,3 +11,13 @@ export function getAllCoins() {
     },
   });
 }
+
+export function getCoinsPrices(coins = [], currencies = ['BTC', 'USD', 'EUR']) {
+  return axios.get(API_PREFIX + '/data/price/multi', {
+    params: {
+      fsyms: coins.join(','),
+      tsyms: currencies.join(','),
+      extraParams: API_PARAM_EXTRA,
+    },
+  });
+}
