@@ -117,4 +117,21 @@ export default {
 
 .trend-tbody-tr {
 }
+
+/* Adding animation */
+
+.table-row-centered {
+  animation-name: rowAdded;
+  animation-duration: 1s;
+}
+
+@keyframes rowAdded {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 </style>

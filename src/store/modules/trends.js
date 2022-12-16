@@ -48,6 +48,8 @@ const mutations = {
       interval: data.interval,
       current: {},
       previous: [],
+      // Related to Vue Bootstrap (for animating this)
+      _rowVariant: 'row-centered',
     })(getters.getExchangeRateBySymbol(state)(data.fsym));
 
     const updatedExchangeRate = R.evolve({
