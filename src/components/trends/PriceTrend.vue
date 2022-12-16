@@ -21,7 +21,7 @@
 
     <template slot="row-details" slot-scope="row">
       <b-card bg-variant="card">
-        <PriceChart :data="generateChartData(row.item.fsym)" />
+        <PriceChart :data="generateChartData(row.item.fsym)" :height="100" />
       </b-card>
     </template>
   </b-table>

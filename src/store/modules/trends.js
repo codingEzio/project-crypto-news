@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as coinsAPI from '@/api/coins';
+import { timeToTimestamp } from '@/helpers/time';
 
 const state = {
   exchangeRates: [],
@@ -54,7 +55,7 @@ const mutations = {
 
     const updatedExchangeRate = R.evolve({
       current: R.always(R.head(data.response)),
-      previous: R.pipe(R.concat(data.response), R.uniq),
+      previous: R.pipe(R.concat(data.response), R.uniq, R.map(timeToTimestamp)),
     })(actualExchangeRate);
 
     state.exchangeRates = R.pipe(
