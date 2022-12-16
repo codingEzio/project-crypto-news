@@ -6,7 +6,14 @@
       rel="noreferrer noopener"
       class="card-img-container"
     >
-      <b-img :src="img" :alt="title" class="card-img card-img-top" />
+      <b-img-lazy
+        :src="img"
+        :alt="title"
+        class="card-img card-img-top"
+        blank-color="#3a4752"
+        blank-height="350"
+        blank-width="350"
+      />
     </a>
 
     <b-card-body>
@@ -71,23 +78,9 @@ export default {
 
 .card-img-container {
   display: block;
-
-  position: relative;
-  width: 100%;
-  height: 0;
-
-  padding-top: 100%;
-
-  background-color: #282b2e;
 }
 
 .card-img {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  width: 100%;
-
   filter: grayscale(50%) saturate(80%);
 }
 </style>
