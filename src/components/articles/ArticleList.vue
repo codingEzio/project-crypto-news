@@ -42,4 +42,10 @@ export default {
   column-fill: balance;
   column-gap: 1em;
 }
+
+@media screen and (max-width: 830px) {
+  .columns {
+    column-count: 2;
+  }
+}
 </style>
