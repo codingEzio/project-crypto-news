@@ -62,7 +62,7 @@ export default {
   max-width: 600px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .jumbotron::before {
     left: 0;
 
