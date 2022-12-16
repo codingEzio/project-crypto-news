@@ -19,73 +19,69 @@
       </b-button>
     </template>
 
-    <!--<template slot="row-details" slot-scope="row">-->
-    <template slot="row-details" slot-scope="">
-      <b-card bg-variant="card">Adversity is the mother of wisdom</b-card>
+    <template slot="row-details" slot-scope="row">
+      <b-card bg-variant="card">
+        <PriceChart :data="generateChartData(row.item.fsym)" />
+      </b-card>
     </template>
   </b-table>
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
+import PriceChart from '@/components/trends/PriceChart';
+
 export default {
   name: 'PriceTrend',
-
+  components: { PriceChart },
   data() {
     return {
       fields: [
         {
           key: 'fsym',
           label: 'Name',
-          sortable: false,
         },
         {
-          key: 'low',
+          key: 'current.low',
           label: 'Min.',
-          sortable: true,
         },
         {
-          key: 'high',
+          key: 'current.high',
           label: 'Max.',
-          sortable: true,
         },
         {
-          key: 'open',
+          key: 'current.open',
           label: 'Open',
-          sortable: true,
         },
         {
-          key: 'close',
+          key: 'current.close',
           label: 'Close',
-          sortable: true,
         },
         {
           key: 'show_details',
         },
       ],
-      items: [
-        {
-          fsym: 'BTC',
-          low: 6333.21,
-          high: 6583.54,
-          close: 12123,
-          open: 6583.53,
-        },
-        {
-          fsym: 'BTC',
-          low: 6333.21,
-          high: 6583.54,
-          close: 12123,
-          open: 6583.53,
-        },
-        {
-          fsym: 'BTC',
-          low: 6333.21,
-          high: 6583.54,
-          close: 12123,
-          open: 6583.53,
-        },
-      ],
     };
+  },
+
+  computed: {
+    ...mapState({
+      items: state => state.trends.exchangeRates,
+      error: state => state.news.error,
+    }),
+
+    ...mapGetters({
+      generateChartData: 'trends/generateChartData',
+    }),
+  },
+
+  created() {
+    this.$store.dispatch('trends/getCoinExchangeRate', { coin: 'BTC' });
+    this.$store.dispatch('trends/getCoinExchangeRate', { coin: 'ETH' });
+    this.$store.dispatch('trends/getCoinExchangeRate', { coin: 'LSK' });
+    this.$store.dispatch('trends/getCoinExchangeRate', { coin: 'LTC' });
+    this.$store.dispatch('trends/getCoinExchangeRate', { coin: 'DASH' });
+    this.$store.dispatch('trends/getCoinExchangeRate', { coin: 'DOGE' });
   },
 };
 </script>

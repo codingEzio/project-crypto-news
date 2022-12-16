@@ -4,6 +4,7 @@ import createLogger from 'vuex/dist/logger';
 
 import news from './modules/news';
 import coins from './modules/coins';
+import trends from './modules/trends';
 
 // Enable log and strict mode only in dev environment
 const debug = process.env.NODE_ENV !== 'production';
@@ -16,5 +17,6 @@ export default new Vuex.Store({
   modules: {
     news,
     coins,
+    trends,
   },
 });
