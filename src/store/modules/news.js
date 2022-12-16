@@ -20,6 +20,7 @@ const actions = {
 const mutations = {
   setNews(state, data) {
     state.news = R.prop('data', data);
+    state.fetchedAt = R.prop('fetchedAt', data);
   },
 
   setError(state, error) {
