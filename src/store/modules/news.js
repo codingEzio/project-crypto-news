@@ -1,4 +1,5 @@
 import * as newsAPI from '../../api/news';
+import * as R from 'ramda';
 
 const state = {
   news: [],
@@ -11,18 +12,14 @@ const actions = {
   getLatestNews({ commit }) {
     newsAPI
       .getLatestNews()
-      .then(resp => {
-        commit('setNews', resp.data.Data);
-      })
-      .catch(err => {
-        commit('setError', err);
-      });
+      .then(data => commit('setNews', data))
+      .catch(error => commit('setError', error));
   },
 };
 
 const mutations = {
   setNews(state, data) {
-    state.news = data;
+    state.news = R.prop('data', data);
   },
 
   setError(state, error) {
