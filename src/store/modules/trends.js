@@ -17,8 +17,8 @@ const getters = {
     (symbol, criterium = 'high') => {
       const exchangeRate = getters.getExchangeRateBySymbol(state)(symbol);
 
-      const labels = R.map(R.prop('time'))(exchangeRate.previous);
-      const data = R.map(R.prop(criterium))(exchangeRate.previous);
+      const labels = R.pluck('time')(exchangeRate.previous);
+      const data = R.pluck(criterium)(exchangeRate.previous);
 
       return {
         labels: labels,
