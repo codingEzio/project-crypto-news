@@ -32,16 +32,19 @@ export function getLatestNews() {
         // Remove certain props from returned JSON response
         //  Filter by 'curl LINK | jq ".Data[0]"' to debug yourself
         R.evolve({
-          data: R.map(
-            R.omit([
-              'upvotes',
-              'downvotes',
-              'lang',
-              'tags',
-              'guid',
-              'source',
-              'categories',
-            ]),
+          data: R.pipe(
+            R.map(
+              R.omit([
+                'upvotes',
+                'downvotes',
+                'lang',
+                'tags',
+                'guid',
+                'source',
+                'categories',
+              ]),
+            ),
+            R.values,
           ),
         }),
       )(response.data);

@@ -4,6 +4,7 @@ import * as R from 'ramda';
 const state = {
   news: [],
   error: null,
+  fetchedAt: 0,
 };
 
 const getters = {};
