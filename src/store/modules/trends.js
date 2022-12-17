@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import * as coinsAPI from '@/api/coins';
+import * as trendsAPI from '@/api/trends';
 import { timeToTimestamp } from '@/helpers/time';
 
 const state = {
@@ -34,9 +34,9 @@ const getters = {
 
 const actions = {
   getCoinExchangeRate({ commit }, { coin, currency = 'USD', limit = 55 }) {
-    coinsAPI
+    trendsAPI
       .getExchangeRateByMinute(coin, currency, limit)
-      .then(response => commit('saveExchangeRate', response))
+      .then(data => commit('saveExchangeRate', data))
       .catch(error => commit('setError', error));
   },
 };
