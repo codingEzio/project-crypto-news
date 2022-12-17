@@ -18,8 +18,8 @@ export function getExchangeRateLink(period = INTERVAL_DAY) {
   }
 }
 
-export function getExchangeRateByDay(fsym, tsym = 'USD', limit = 55) {
-  const apiLink = getExchangeRateLink(INTERVAL_DAY);
+export function getExchangeRateUtil(period, fsym, tsym = 'USD', limit = 55) {
+  const apiLink = getExchangeRateLink(period);
 
   return axios
     .get(apiLink, {
@@ -31,52 +31,22 @@ export function getExchangeRateByDay(fsym, tsym = 'USD', limit = 55) {
       },
     })
     .then(response => ({
-      interval: INTERVAL_DAY,
+      interval: period,
       response: response.data.Data,
       timestamp: response.data.TimeTo,
       fsym,
       tsym,
     }));
+}
+
+export function getExchangeRateByDay(fsym, tsym = 'USD', limit = 55) {
+  return getExchangeRateUtil(INTERVAL_DAY, fsym, tsym, limit);
 }
 
 export function getExchangeRateByHour(fsym, tsym = 'USD', limit = 55) {
-  const apiLink = getExchangeRateLink(INTERVAL_HOUR);
-
-  return axios
-    .get(apiLink, {
-      params: {
-        extraParams: API_PARAM_EXTRA,
-        fsym,
-        tsym,
-        limit,
-      },
-    })
-    .then(response => ({
-      interval: INTERVAL_HOUR,
-      response: response.data.Data,
-      timestamp: response.data.TimeTo,
-      fsym,
-      tsym,
-    }));
+  return getExchangeRateUtil(INTERVAL_HOUR, fsym, tsym, limit);
 }
 
 export function getExchangeRateByMinute(fsym, tsym = 'USD', limit = 55) {
-  const apiLink = getExchangeRateLink(INTERVAL_MINUTE);
-
-  return axios
-    .get(apiLink, {
-      params: {
-        extraParams: API_PARAM_EXTRA,
-        fsym,
-        tsym,
-        limit,
-      },
-    })
-    .then(response => ({
-      interval: INTERVAL_MINUTE,
-      response: response.data.Data,
-      timestamp: response.data.TimeTo,
-      fsym,
-      tsym,
-    }));
+  return getExchangeRateUtil(INTERVAL_MINUTE, fsym, tsym, limit);
 }
