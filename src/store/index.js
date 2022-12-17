@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import createLogger from 'vuex/dist/logger';
 import * as R from 'ramda';
-import createPersistedState from 'vuex-persistedstate';
+import createLogger from 'vuex/dist/logger';
+import createPersistedState from '@/store/plugins/persistent';
 
 import news from './modules/news';
 import coins from './modules/coins';
@@ -13,15 +13,20 @@ const debug = process.env.NODE_ENV !== 'production';
 
 Vue.use(Vuex);
 
-const allPlugins = [createPersistedState()];
+const plugins = [
+  createPersistedState({
+    strictMode: debug,
+    modules: ['coins', 'news'],
+  }),
+];
 const devPlugins = [createLogger()];
 const prodPlugins = [];
 
 export default new Vuex.Store({
   strict: debug,
   plugins: debug
-    ? R.concat(allPlugins, devPlugins)
-    : R.concat(allPlugins, prodPlugins),
+    ? R.concat(plugins, devPlugins)
+    : R.concat(plugins, prodPlugins),
   modules: {
     news,
     coins,
