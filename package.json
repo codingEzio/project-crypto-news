@@ -20,7 +20,8 @@
     "vue-chartjs": "3.4.0",
     "aos": "2.3.3",
     "change-case": "3.0.2",
-    "vuex-persistedstate": "2.5.4"
+    "vuex-persist": "1.7.1",
+    "localforage": "1.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
