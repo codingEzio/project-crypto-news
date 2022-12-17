@@ -23,23 +23,15 @@ const actions = {
   getAllCoins({ commit }) {
     coinsAPI
       .getAllCoins()
-      .then(response => {
-        commit('setCoins', response.data);
-      })
-      .catch(error => {
-        commit('setError', error);
-      });
+      .then(data => commit('setCoins', data))
+      .catch(error => commit('setError', error));
   },
 
   getCoinsPrices({ commit }, { coins, currencies }) {
     coinsAPI
       .getCoinsPrices(coins, currencies)
-      .then(response => {
-        commit('savePrices', response.data);
-      })
-      .catch(error => {
-        commit('setError', error);
-      });
+      .then(data => commit('savePrices', data))
+      .catch(error => commit('setError', error));
   },
 };
 
