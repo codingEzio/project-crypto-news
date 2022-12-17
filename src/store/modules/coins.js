@@ -10,12 +10,7 @@ const state = {
 
 const getters = {
   getCoinBySymbol: state => symbol => {
-    return R.pipe(
-      // x
-      R.filter(R.propEq('Symbol', symbol)),
-      // x
-      R.head,
-    )(state.coins);
+    return R.pipe(R.filter(R.propEq('symbol', symbol)), R.head)(state.coins);
   },
 };
 

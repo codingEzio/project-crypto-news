@@ -3,16 +3,16 @@
     <b-form-select
       variant="transparent"
       placeholder="Select coin"
-      value-field="Symbol"
-      text-field="FullName"
       :options="coins"
+      @input="changeSelectedCoin($event)"
+      value-field="symbol"
+      text-field="fullName"
     />
 
     <b-form-group class="my-1" description="Price actualized in every 10s">
       <b-form-input
         placeholder="Amount"
         :value="coin.amount"
-        :disabled="!('Symbol' in coin)"
         @input="$emit('input', $event)"
       />
     </b-form-group>
