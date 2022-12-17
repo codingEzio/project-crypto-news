@@ -1,11 +1,11 @@
 import * as R from 'ramda';
 import * as coinsAPI from '@/api/coins';
-import { prependProp } from '@/helpers/ramda';
 
 const state = {
   coins: [],
   prices: {},
   error: null,
+  fetchedAt: 0,
 };
 
 const getters = {
@@ -36,27 +36,13 @@ const actions = {
 };
 
 const mutations = {
-  setCoins(state, { Data, BaseImageUrl, BaseLinkUrl }) {
-    const requiredProps = [
-      'Id',
-      'Symbol',
-      'CoinName',
-      'FullName',
-      'Url',
-      'ImageUrl',
-    ];
-
+  setCoins(state, response) {
     state.coins = R.pipe(
-      R.filter(R.allPass(R.map(R.has, requiredProps))),
-      R.map(
-        R.compose(
-          R.pickAll(requiredProps),
-          prependProp('Url', BaseLinkUrl),
-          prependProp('ImageUrl', BaseImageUrl),
-        ),
-      ),
-      R.values,
-    )(Data);
+      R.concat(R.prop('data', response)),
+      R.uniqBy(R.prop('id')),
+    )(state.coins);
+
+    state.fetchedAt = R.prop('fetchedAt', response);
   },
 
   savePrices(state, response) {
