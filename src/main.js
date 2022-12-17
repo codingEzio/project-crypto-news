@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueBootStrap from 'bootstrap-vue';
 import aos from 'aos';
+import registerServiceWorker from '@/workers/registerServiceWorker';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -16,6 +17,9 @@ Vue.use(VueRouter);
 Vue.use(VueBootStrap);
 
 Vue.config.productionTip = false;
+Vue.config.devtools = true;
+
+registerServiceWorker();
 
 const router = new VueRouter({
   routes: [
