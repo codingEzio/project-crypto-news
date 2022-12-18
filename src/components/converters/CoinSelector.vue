@@ -34,8 +34,14 @@
 </template>
 
 <script>
+import { VueSelect } from 'vue-select';
+
 export default {
   name: 'CoinSelector',
+
+  components: {
+    VueSelect,
+  },
 
   props: {
     id: String,
