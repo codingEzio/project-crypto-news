@@ -3,7 +3,6 @@
     class="article"
     no-body
     bg-variant="card"
-    border-variant="transparent"
     data-aos="slide-up"
     data-aos-once="true"
   >

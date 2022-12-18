@@ -9,7 +9,7 @@
           <b-nav-item to="/home">Home</b-nav-item>
           <b-nav-item to="/news">News</b-nav-item>
           <b-nav-item
-            class="mx-3 py-0 btn btn-outline-secondary"
+            class="mx-3 py-0 btn btn-outline-primary"
             href="https://github.com/codingezio"
             >Source
           </b-nav-item>

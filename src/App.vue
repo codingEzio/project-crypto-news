@@ -40,10 +40,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  background-color: #323639;
-}
-
 .app {
   position: relative;
 
@@ -56,34 +52,10 @@ body {
   background-position: top right;
   background-size: 700px;
   background-attachment: local;
-  background-color: #323639;
 
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #ffffff;
-}
-
-.border-transparent {
-  border-color: transparent;
-}
-
-.btn-transparent {
-  background-color: transparent;
-  color: #ffffff;
-
-  padding: 0 0 0.375rem;
-
-  font-size: inherit;
-  line-height: 1.5;
-}
-
-.bg-card {
-  background-color: #41464a;
-}
-
-.bg-dark {
-  background-color: #323639 !important;
+  @media screen and (max-width: 600px) {
+    background-image: none;
+  }
 }
 
 .fade-enter-active,
@@ -94,11 +66,5 @@ body {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
-}
-
-@media screen and (max-width: 600px) {
-  .app {
-    background-image: none;
-  }
 }
 </style>
