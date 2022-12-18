@@ -2,9 +2,9 @@
   <div class="app">
     <transition-group name="fade">
       <GlobalLoader key="app-loader" v-if="!isStateReady" />
-      <GlobalHeader key="app-header" v-if="!isStateReady" />
-      <ContentView key="app-content" v-if="!isStateReady" />
-      <GlobalFooter key="app-footer" v-if="!isStateReady" />
+      <GlobalHeader key="app-header" v-if="isStateReady" />
+      <ContentView key="app-content" v-if="isStateReady" />
+      <GlobalFooter key="app-footer" v-if="isStateReady" />
     </transition-group>
   </div>
 </template>
