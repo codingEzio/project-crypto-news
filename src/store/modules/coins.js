@@ -12,6 +12,12 @@ const getters = {
   getCoinBySymbol: state => symbol => {
     return R.pipe(R.filter(R.propEq('symbol', symbol)), R.head)(state.coins);
   },
+
+  getPricesBySymbol: state => symbol => {
+    console.log(symbol);
+
+    return R.prop(symbol)(state.prices);
+  },
 };
 
 const actions = {

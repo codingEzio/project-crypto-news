@@ -1,21 +1,35 @@
 <template>
-  <b-card bg-variant="card" border-variant="transparent">
-    <b-form-select
-      variant="transparent"
-      placeholder="Select coin"
+  <b-card class="coin-card">
+    <VueSelect
+      dir="ltr"
+      label="fullName"
+      class="custom-v-select"
+      placeholder="Select coin to compare"
       :options="coins"
-      @input="changeSelectedCoin($event)"
-      value-field="symbol"
-      text-field="fullName"
+      :onChange="changeSelectedCoin"
     />
-
-    <b-form-group class="my-1" description="Price actualized in every 10s">
+    <b-form-group class="my-1" v-if="canCompare">
       <b-form-input
         placeholder="Amount"
-        :value="coin.amount"
+        :value="value"
         @input="$emit('input', $event)"
-      />
+      >
+      </b-form-input>
     </b-form-group>
+
+    <div class="coin-card-logo" v-if="coin.imageUrl">
+      <img :src="coin.imageUrl" class="coin-card-logo-img" />
+    </div>
+
+    <div class="d-flex" v-if="price">
+      <p class="my-0 flex-fill text-muted">
+        <small>$ {{ price.USD }}</small>
+      </p>
+
+      <p class="my-0 flex-fill text-muted text-right">
+        <small>₿ {{ price.BTC }}</small>
+      </p>
+    </div>
   </b-card>
 </template>
 
@@ -28,6 +42,8 @@ export default {
     coin: Object,
     coins: Array,
     value: Number,
+    price: Object,
+    canCompare: Boolean,
   },
 
   methods: {
@@ -41,4 +57,27 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.coin-card {
+  position: relative;
+
+  &-logo {
+    position: absolute;
+    top: 24px;
+    left: 7px;
+
+    background-color: #282b2e;
+    border-color: #282b2e;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 100%;
+
+    &-img {
+      width: 26px;
+      height: 26px;
+
+      border-radius: 100%;
+    }
+  }
+}
+</style>
