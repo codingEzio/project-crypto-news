@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 import VueBootStrap from 'bootstrap-vue';
 import aos from 'aos';
 import registerServiceWorker from '@/workers/registerServiceWorker';
@@ -9,24 +8,15 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'aos/dist/aos.css';
 
 import App from './App.vue';
-import GlobalHome from './components/screens/GlobalHome';
-import NewsItem from './components/screens/NewsItem';
-import store from './store';
+import store from '@/store';
+import router from '@/router';
 
-Vue.use(VueRouter);
 Vue.use(VueBootStrap);
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
 
 registerServiceWorker();
-
-const router = new VueRouter({
-  routes: [
-    { path: '/home', component: GlobalHome, alias: '/' },
-    { path: '/news', component: NewsItem },
-  ],
-});
 
 new Vue({
   created() {

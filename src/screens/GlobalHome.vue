@@ -47,7 +47,7 @@ export default {
   left: 15px;
   top: 0;
 
-  background-image: url('../../../public/images/map.png');
+  background-image: url('../../public/images/map.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center left;
