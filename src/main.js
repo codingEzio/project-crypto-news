@@ -3,9 +3,7 @@ import VueBootStrap from 'bootstrap-vue';
 import aos from 'aos';
 import registerServiceWorker from '@/workers/registerServiceWorker';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-import 'aos/dist/aos.css';
+import './styles/_index.scss';
 
 import App from './App.vue';
 import store from '@/store';
