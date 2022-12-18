@@ -111,7 +111,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .row {
   max-width: 610px;
 }

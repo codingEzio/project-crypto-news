@@ -16,16 +16,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .footer {
-  background-image: linear-gradient(transparent 5%, #323639 95%);
+  background-image: linear-gradient(transparent 0, #323639 95%);
   font-size: 0.85em;
 
-  padding: 1.65rem 1rem 0.35rem 1rem;
-}
+  padding-top: 1.65rem;
+  padding-bottom: 0.35rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
-@media screen and (max-width: 1300px) {
-  .footer {
+  text-align: right;
+
+  @media screen and (max-width: 1300px) {
     text-align: center;
   }
 }

@@ -65,29 +65,32 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .article {
   display: inline-block;
 }
 
-.card-title,
-.card-text {
-  word-break: break-word;
-}
+.card {
+  &-img {
+    filter: grayscale(50%) saturate(80%);
 
-.card-text {
-  text-align: justify;
-  text-align-last: left;
-  text-justify: distribute;
+    // Image container is actually a link:
+    &-container {
+      display: block;
+    }
+  }
 
-  hyphens: auto;
-}
+  &-title,
+  &-text {
+    word-break: break-word;
+  }
 
-.card-img-container {
-  display: block;
-}
+  &-text {
+    text-align: justify;
+    text-align-last: left;
+    text-justify: distribute;
 
-.card-img {
-  filter: grayscale(50%) saturate(80%);
+    hyphens: auto;
+  }
 }
 </style>

@@ -36,16 +36,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .columns {
   column-count: 3;
   column-fill: balance;
   column-gap: 1em;
-}
 
-@media screen and (max-width: 830px) {
-  .columns {
+  @media screen and (max-width: 830px) {
     column-count: 2;
+  }
+
+  @media screen and (max-width: 570px) {
+    column-count: 1;
   }
 }
 </style>
