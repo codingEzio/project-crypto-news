@@ -56,7 +56,7 @@ export default {
 
     ...mapGetters({
       getCoinBySymbol: 'coins/getCoinBySymbol',
-      getPriceBySymbol: 'coins/getPriceBySymbol',
+      getPricesBySymbol: 'coins/getPricesBySymbol',
     }),
 
     bothCoinsSelected() {

@@ -16,7 +16,7 @@ export default function createPersistedState(options = {}) {
       asyncStorage: true,
 
       restoreState: (key, storage) => {
-        new Promise(resolve => {
+        return new Promise(resolve => {
           storage.getItem(key).then(data => {
             resolve(data);
 
