@@ -32,39 +32,16 @@ export default {
   created() {
     this.$store._vm.$root.$on('storageReady', () => {
       this.isStateReady = true;
-
-      this.$store.dispatch('coins/getAllCoins');
     });
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app {
-  position: relative;
+  display: block;
 
   min-height: 100vh;
   height: 100%;
-  width: 100vw;
-
-  background-image: url('../public/images/bg.svg');
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 700px;
-  background-attachment: local;
-
-  @media screen and (max-width: 600px) {
-    background-image: none;
-  }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>

@@ -47,6 +47,10 @@ export default {
     coinB: { amount: 0 },
   }),
 
+  created() {
+    this.$store.dispatch('coins/getAllCoins');
+  },
+
   computed: {
     ...mapState({
       coins: state => state.coins.coins,
