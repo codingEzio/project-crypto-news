@@ -1,11 +1,5 @@
 <template>
-  <b-card
-    class="article"
-    no-body
-    bg-variant="card"
-    data-aos="slide-up"
-    data-aos-once="true"
-  >
+  <b-card no-body class="article" data-aos="slide-up" data-aos-once="true">
     <a
       :href="url"
       target="_blank"
@@ -35,7 +29,7 @@
       <p class="card-text" v-html="body" />
 
       <small class="text-muted">
-        Updated {{ published }} by {{ publisher }}
+        Published {{ publishedOn }} ago by {{ publisher }}
       </small>
     </b-card-body>
   </b-card>
@@ -57,7 +51,7 @@ export default {
   },
 
   computed: {
-    published() {
+    publishedOn() {
       return formatDistance(new Date(this.date * 1000), new Date());
     },
   },
